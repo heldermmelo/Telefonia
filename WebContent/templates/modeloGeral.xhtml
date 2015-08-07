@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>Telefonia</title>
+</h:head>
+<h:body>
+	<p:growl id="msgGlobal" />
+	<p:layout fullPage="true">
+		<p:layoutUnit header="Sistema de telefonia computadorizado"
+			position="north" resizable="false" closable="false">
+		</p:layoutUnit>
+		<p:layoutUnit header="Desenvolvido por Helder Melo 2015"
+			position="south" resizable="false" closable="false">
+		</p:layoutUnit>
+		<p:layoutUnit header="Menu principal" position="west"
+			resizable="false" closable="false">
+			<h:form>
+				<p:panelMenu>
+					<p:submenu label="Arquivo">
+						<p:menuitem value="Principal" outcome="/pages/principal.xhtml" />
+						<p:menuitem value="Ramais" outcome="/pages/ramalPesquisa.xhtml"/>
+					</p:submenu>
+					<p:submenu label="Cadastro">
+						<p:menuitem value="Novo Ramal" outcome="/pages/cadastroRamal.xhtml"/>
+					</p:submenu>
+
+
+				</p:panelMenu>
+			</h:form>
+			<ui:insert name="menu" />
+		</p:layoutUnit>
+		<p:layoutUnit position="center" resizable="false" closable="false">
+			<ui:insert name="conteudo" />
+		</p:layoutUnit>
+	</p:layout>
+
+</h:body>
+</html>

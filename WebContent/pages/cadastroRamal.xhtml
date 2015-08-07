@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+<ui:composition template="/templates/modeloGeral.xhtml">
+	<ui:define name="conteudo">
+		<h:form id="frc">
+			<p:toolbar>
+				<f:facet name="left">
+					<h:panelGrid id="pd" columns="2">
+						
+						<h:outputText value="Codigo:" />
+						<p:inputText maxLength="20" size="10" 
+						readonly="true"
+						value="#{ramalBean.ramalParaCadastro.codigo}"/>
+
+						<h:outputText value="Numero" />
+						<p:inputText maxLength="50" size="30"
+							value="#{ramalBean.ramalParaCadastro.numero}" />
+
+
+						<h:outputText value="Senha:" />
+						<p:inputText maxLength="50" size="30"
+							value="#{ramalBean.ramalParaCadastro.senha}" />
+
+
+						<h:outputText value="Contexto" />
+						<p:inputText maxLength="50" size="30"
+							value="#{ramalBean.ramalParaCadastro.contexto}" />
+					</h:panelGrid>
+					<h:panelGrid columns="3">
+						<p:commandButton value="salvar"
+							actionListener="#{ramalBean.salvar}" update=":msgGlobal :frc:pd" />
+						<p:commandButton value="limpar" actionListener="#{ramalBean.limpar}"
+							 update=":msgGlobal :frc:pd" />
+						<p:commandButton value="voltar"
+							action="/pages/ramalPesquisa.xhtml?faces-redirect=true" />
+					</h:panelGrid>
+				</f:facet>
+			</p:toolbar>
+		</h:form>
+	</ui:define>
+</ui:composition>
+</html>
