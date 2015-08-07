@@ -7,7 +7,9 @@
 	xmlns:ui="http://java.sun.com/jsf/facelets">
 <ui:composition template="/templates/modeloGeral.xhtml">
 	<ui:define name="conteudo">
+		
 		<f:event listener="#{ramalBean.carregar}" type="preRenderView"/>
+		
 		<h:form>
 			<h:panelGrid columns="4">
 				<p:outputLabel value="Filtro de pesquisa:" />
