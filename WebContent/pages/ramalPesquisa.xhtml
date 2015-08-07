@@ -19,7 +19,8 @@
 			<p:dataTable emptyMessage="Nenhum ramal encontrado!"
 			value="#{ramalBean.listaRamais}" 
 			filteredValue="#{ramalBean.listaRamaisFiltrados}"
-			var="ramal">
+			var="ramal"
+			rows="10" paginator="true">
 				<p:column headerText="Código">
 					<h:outputText value="#{ramal.codigo}"/>
 				</p:column>
